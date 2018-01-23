@@ -7,7 +7,7 @@ import { ListComponent } from './client/list/list.component';
 const routes: Routes = [
   { path: '', redirectTo: '/list', pathMatch: 'full' },
   { path: 'list', component: ListComponent },
-  //{ path: 'edit/:id', component: EditComponent }
+  { path: 'edit', component: EditComponent }
 ];
 
 
