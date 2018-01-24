@@ -1,0 +1,13 @@
+.gutter {
+  &__base {
+    padding: 15px;
+  }
+  &__base-h {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  &__base-v {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}

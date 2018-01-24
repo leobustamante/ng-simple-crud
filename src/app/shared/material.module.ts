@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import {
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatCardModule,
+    MatTableModule,
+    //MatTableDataSource
 } from '@angular/material';
 
 import { CdkTableModule } from '@angular/cdk/table';
@@ -10,7 +13,10 @@ import 'hammerjs';
 
 const MATERIAL_MODULES = [
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatCardModule,
+    MatTableModule,
+    //MatTableDataSource
 ];
 
 @NgModule({
