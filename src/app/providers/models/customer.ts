@@ -7,4 +7,5 @@ export class Customer {
   cidade: string;
   estado: string;
   telefone: string;
+  actions: null;
 }

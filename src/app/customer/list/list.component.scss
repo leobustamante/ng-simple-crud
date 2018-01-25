@@ -1,12 +1,22 @@
-.example-container {
+.table-container {
   display: flex;
   flex-direction: column;
   min-width: 300px;
+  //text-align: left;
 }
 
 .mat-table {
   //overflow: auto;
   //max-height: 500px;
+  .mat-column-id {
+    //max-width: 25px;
+    //padding-right: 10px;
+  }
+
+  .mat-column-telefone {
+    //max-width: 90px;
+    //padding-right: 10px;
+  }
 }
 
 .mat-header-cell.mat-sort-header-sorted {

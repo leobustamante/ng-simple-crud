@@ -5,26 +5,99 @@
         <mat-card-title>Clientes Cadastrados</mat-card-title>
       </mat-card>
       <div class="example-container mat-elevation-z8">
-        {{customers}}
-        {{dataSource}}
         <mat-table #table [dataSource]="dataSource" matSort>
-
-          <!-- Position Column -->
+          
           <ng-container matColumnDef="id">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> No. </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{customers.id}} </mat-cell>
+            <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+            <mat-cell *matCellDef="let customer"> {{customer.id}} </mat-cell>
           </ng-container>
 
-          <!-- Name Column -->
           <ng-container matColumnDef="nome">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{customers.nome}} </mat-cell>
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Nome </mat-header-cell>
+            <mat-cell *matCellDef="let customer"> {{customer.nome}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> E-mail </mat-header-cell>
+            <mat-cell *matCellDef="let customer"> {{customer.email}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="endereco">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Endereço </mat-header-cell>
+            <mat-cell *matCellDef="let customer"> {{customer.endereco}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="bairro">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Bairro </mat-header-cell>
+            <mat-cell *matCellDef="let customer"> {{customer.bairro}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="cidade">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Cidade </mat-header-cell>
+            <mat-cell *matCellDef="let customer"> {{customer.cidade}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="estado">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Estado </mat-header-cell>
+            <mat-cell *matCellDef="let customer"> {{customer.estado}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="telefone">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> telefone </mat-header-cell>
+            <mat-cell *matCellDef="let customer"> {{customer.telefone}} </mat-cell>
           </ng-container>
 
           <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
           <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
         </mat-table>
       </div>
-    </div>
+      <!-- <div class="table-container mat-elevation-z8">
+        <mat-table #table [dataSource]="dataSource" matSort>
+
+          <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+            <mat-cell *matCellDef="let customer"> {{customer.id}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="nome">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Nome </mat-header-cell>
+            <mat-cell *matCellDef="let customer"> {{customer.nome}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> E-mail </mat-header-cell>
+            <mat-cell *matCellDef="let customer"> {{customer.email}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="endereco">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Endereço </mat-header-cell>
+            <mat-cell *matCellDef="let customer"> {{customer.endereco}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="bairro" mat-sort-header>
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Bairro </mat-header-cell>
+            <mat-cell *matCellDef="let customer"> {{customer.bairro}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="cidade" mat-sort-header>
+            <mat-header-cell *matHeaderCellDef> Cidade </mat-header-cell>
+            <mat-cell *matCellDef="let customer"> {{customer.cidade}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="estado" mat-sort-header>
+            <mat-header-cell *matHeaderCellDef> Estado </mat-header-cell>
+            <mat-cell *matCellDef="let customer"> {{customer.estado}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="telefone" mat-sort-header>
+            <mat-header-cell *matHeaderCellDef> telefone </mat-header-cell>
+            <mat-cell *matCellDef="let customer"> {{customer.telefone}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </div>
+    </div> -->
   </div>
  </div>
