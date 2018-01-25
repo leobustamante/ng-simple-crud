@@ -1,5 +1,5 @@
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import { ReactiveFormsModule } from '@angular/forms';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,20 +17,13 @@ import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
-import { ClientModule } from './client/client.module';
-
-import { AppService } from './providers/app.service';
-
-
+import { CustomerModule } from './customer/customer.module';
 
 import { environment } from '../environments/environment';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
 }
-
-const PROVIDERS: any = [AppService/*, LocaleInteractor, UserInteractor*/];
-
 
 @NgModule({
   declarations: [
@@ -39,12 +32,14 @@ const PROVIDERS: any = [AppService/*, LocaleInteractor, UserInteractor*/];
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     MaterialModule,
     ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
+    HttpClientModule,
     SharedModule,
-    ClientModule,
+    CustomerModule,
     TranslateModule.forRoot({
       loader: {
           provide: TranslateLoader,
@@ -53,7 +48,7 @@ const PROVIDERS: any = [AppService/*, LocaleInteractor, UserInteractor*/];
       }
     })
   ],
-  providers: PROVIDERS,
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

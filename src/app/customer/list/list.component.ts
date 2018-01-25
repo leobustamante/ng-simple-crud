@@ -1,20 +1,41 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatSort } from '@angular/material';
 
+import { Customer } from '../../providers/models/customer';
+import { CustomerService } from '../../providers/services/customer.service';
 
-
+/**
+ * @title Table with sorting
+ */
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements OnInit {
-  displayedColumns = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<Element>(ELEMENT_DATA);
+export class ListComponent {
+  customers: Customer[];
+  displayedColumns = ['id', 'nome'];
+  dataSource = new MatTableDataSource(this.customers);
 
   @ViewChild(MatSort) sort: MatSort;
 
+  constructor(private customerService: CustomerService) {}
+
   ngOnInit() {
+    this.getCustomers();
+  }
+
+  getCustomers(): void {
+    this.customerService.getCustomers()
+        .subscribe(customers => this.customers = customers);
+    console.log(this.customers)
+  }
+
+  /**
+   * Set the sort after the view init since this component will
+   * be able to query its view for the initialized sort.
+   */
+  ngAfterViewInit() {
     this.dataSource.sort = this.sort;
   }
 }
@@ -48,8 +69,3 @@ const ELEMENT_DATA: Element[] = [
   {position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K'},
   {position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca'},
 ];
-
-
-//https://github.com/angular/material2/blob/master/src/material-examples/table-sorting/table-sorting-example.ts
-//https://github.com/angular/material2/blob/master/src/demo-app/table/table-demo.ts
-

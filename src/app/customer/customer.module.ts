@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatCardModule, MatTableModule } from '@angular/material';
+import { MatCardModule, MatTableModule, MatInputModule } from '@angular/material';
 
-import { AppService } from '../providers/app.service';
+import { CustomerService } from '../providers/services/customer.service';
+
+import { MaterialModule } from '../shared/material.module';
 
 import { EditComponent } from './edit/edit.component';
 import { ListComponent } from './list/list.component';
@@ -12,13 +14,13 @@ import { ListComponent } from './list/list.component';
 @NgModule({
   imports: [
     CommonModule,
-    MatCardModule,
-    MatTableModule 
+    MaterialModule
   ],
   declarations: [
     EditComponent, 
     ListComponent
-   ],providers: [
+   ],providers: [ 
+     CustomerService
   ]
 })
-export class ClientModule { }
+export class CustomerModule { }

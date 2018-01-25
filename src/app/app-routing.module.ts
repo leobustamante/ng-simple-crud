@@ -1,8 +1,8 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { EditComponent } from './client/edit/edit.component';
-import { ListComponent } from './client/list/list.component';
+import { EditComponent } from './customer/edit/edit.component';
+import { ListComponent } from './customer/list/list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/list', pathMatch: 'full' },
