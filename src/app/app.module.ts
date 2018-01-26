@@ -1,23 +1,27 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
+
 
 import { MaterialModule } from './shared/material.module';
+import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from './shared/shared.module';
+import { CustomerModule } from './customer/customer.module';
 
 import { HttpModule, Http, BaseRequestOptions } from '@angular/http';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { MockBackend, MockConnection } from '@angular/http/testing';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
+import { AddComponent } from './dialogs/add/add.component';
+import { EditComponent } from './dialogs/edit/edit.component';
+import { DeleteComponent } from './dialogs/delete/delete.component';
 
-import { AppRoutingModule } from './app-routing.module';
-import { SharedModule } from './shared/shared.module';
-import { CustomerModule } from './customer/customer.module';
 
 import { environment } from '../environments/environment';
 
@@ -28,6 +32,9 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
+    AddComponent,
+    EditComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,
